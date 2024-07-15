@@ -14,5 +14,3 @@ elif x < 0 and y < 0:
     print("Q3")
 else:
     print("Q4")
-
-

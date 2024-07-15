@@ -17,6 +17,7 @@ def tabuada (x):
 
         print(f"{x} x {t} = {multiplicacao}")
         
+
 print(tabuada(4))
 
 

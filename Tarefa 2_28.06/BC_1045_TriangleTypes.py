@@ -23,5 +23,6 @@ elif A == B == C:
     print(f"TRIANGULO EQUILATERO")
 elif a == b and a != c or b == c and b != a or a == c and a != b:
     print("TRIANGULO ISOSCELES")
-
+else:
+    print()
 
