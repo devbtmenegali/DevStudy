@@ -3,6 +3,7 @@ Pedro está organizando sua coleção de filmes e anotou os nomes de 5 filmes qu
 Crie um programa em Python que permita adicionar novos filmes, remover filmes já assistidos e 
 imprimir a lista atualizada de filmes para assistir.
 '''
+
 def escolha():
     print(f"Bem-vindo a lista de filmes do Pedro")
     print(f"Digite 1 para acrescentar")
@@ -34,9 +35,11 @@ def adicionar_filmes(colecao_filmes):
 
 def remover_filmes(colecao_filmes):
     
+    for f in range():
+        filme = input(f"Digite o nome do filme a ser removido:")
+        colecao_filmes.remove(colecao_filmes)
     
+    print(colecao_filmes)
     
-    
-    
-def trocar_filmes():
+#def trocar_filmes():
 
