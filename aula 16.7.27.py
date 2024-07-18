@@ -5,7 +5,7 @@ def itens_supermercado():
     lista_produtos=[]   
 
     for x in range (1,8):
-        preco_produtos = float(input(f"Acrescente o preço do produto {x:.2f}:"))
+        preco_produtos = float(input(f"Acrescente o preço do produto {x}:"))
         lista_produtos.append(preco_produtos)
 
     soma_produtos = sum(lista_produtos)

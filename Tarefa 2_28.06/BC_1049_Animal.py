@@ -18,5 +18,5 @@ elif a == 'invertebrado' and b == 'anelideo' and c == 'hematofogo':
     print(f"sanguessuga")
 elif a == 'invertebrado' and b == 'anelideo' and c == 'onivoro':
     print(f"minhoca")
-else:
-    print()
+#else:
+    #print()

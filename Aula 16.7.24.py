@@ -6,49 +6,49 @@ imprimir a lista atualizada de filmes para assistir.
 colecao_filmes = []
 
 def escolha():
-    print(f"Bem-vindo a lista de filmes do Pedro")
-    print(f"Digite 1 para acrescentar")
-    print(f"Digite 2 para remover")
-    print(f"Digite 3 para trocar")
-    escolha = input("Escolha a opção:")
-    
-    if escolha == 0:
-        print("Saindo do programa. Até logo!")
-            
-    elif escolha == 1:
-        adicionar_filmes()
+    while True:
+        print(f"Bem-vindo a lista de filmes do Pedro")
+        print(f"Digite 1 para acrescentar")
+        print(f"Digite 2 para remover")
+        print(f"Digite 3 para trocar")
+        print(f"Digite 0 para sair")
+        escolha = input("Escolha a opção: ")
 
-    elif escolha == 2: 
+        # Converter a entrada para inteiro
+        if escolha.isdigit():
+            escolha = int(escolha)
+        else:
+            print("Opção inválida. Digite um número.")
+            continue
 
-    #elif escolha == 3: 
-        trocar_filmes()
+        if escolha == 0:
+            print("Saindo do programa. Até logo!")
+            break
 
-    else:
-        print("Opção inválida ou lista de filmes vazia.")
+        elif escolha == 1:
+            adicionar_filmes()
 
-escolha()
+        elif escolha == 2:
+            remover_filmes()
+
+        elif escolha == 3: 
+            trocar_filmes()
+
+        else:
+            print("Opção inválida ou lista de filmes vazia.")
+
+# Chamada da função principal
 
 def adicionar_filmes():
+   
+    while True:
+        filmes_str = input("Digite o nome do filme:").strip()
+        if filmes_str.lower() == 's':
+            break
+        colecao_filmes.append(filmes_str)    
     
-    for f in range(1,6):
-        filme = input(f"Digite o título do filme {f}:").rstrip()
-        colecao_filmes.append(filme)
-
+    print("Filmes adaicionados com sucesso!")
     print(colecao_filmes)
-
-adicionar_filmes()
-
-def remover_filmes(colecao_filmes):
-    
-    for f in range():
-        filme = input(f"Digite o nome do filme a ser removido:")
-        colecao_filmes.remove(colecao_filmes)
-    
-    print(colecao_filmes)
-    
-remover_filmes()
+    return colecao_filmes
 
 escolha()
-
-#def trocar_filmes():
-
