@@ -24,7 +24,22 @@ def menu_tarefas():
         else:
             print("Opção inválida, escolha corretamente")
 
-menu_tarefas()
 
-#def adicionar_tarefas():
+def adicionar_tarefas():
+
+    while True:
+        tarefa = input("Adicione uma tarefa ou (S)air:").strip()
+        if tarefa == "S":
+            break
+        lista_de_tarefas.append(tarefa)
+        
+    print(lista_de_tarefas)
+    
+
+
+
+
 #def concluir_tarefas(): 
+
+
+menu_tarefas()
