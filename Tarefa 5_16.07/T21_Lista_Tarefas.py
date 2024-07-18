@@ -33,13 +33,20 @@ def adicionar_tarefas():
             break
         lista_de_tarefas.append(tarefa)
         
+    print("LISTA DE TAREFAS DO DIA!")
     print(lista_de_tarefas)
     
+def concluir_tarefas(): 
 
-
-
-
-#def concluir_tarefas(): 
-
-
+    while True:
+        if lista_de_tarefas == []:
+            print("Você deve acrescentar tarefa!")
+            break
+        else:
+            tarefa_c = input("Qual tarefa foi concluída?")
+            lista_de_tarefas.remove(tarefa_c)
+        
+        print("SUA LISTA ATUALIZADA!")
+        print(lista_de_tarefas)
+        
 menu_tarefas()
