@@ -42,7 +42,7 @@ def escolha():
 def adicionar_filmes():
    
     while True:
-        filmes_str = input("Digite o nome do filme:").strip()
+        filmes_str = input("Digite o nome do filme ou (s)air:").strip()
         if filmes_str.lower() == 's':
             break
         colecao_filmes.append(filmes_str)    
@@ -50,5 +50,16 @@ def adicionar_filmes():
     print("Filmes adaicionados com sucesso!")
     print(colecao_filmes)
     return colecao_filmes
+
+def remover_filmes():
+
+    while True:
+        filmes_str = input("Escreva o nome do filme a ser retirado:")
+        if filmes_str.lower() == "s":
+            break
+        colecao_filmes.remove(filmes_str)
+
+    print("Filme(s) removidos com sucesso")
+    print(colecao_filmes)
 
 escolha()
