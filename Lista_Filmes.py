@@ -37,8 +37,6 @@ def escolha():
         else:
             print("Opção inválida ou lista de filmes vazia.")
 
-# Chamada da função principal
-
 def adicionar_filmes():
    
     while True:
@@ -49,7 +47,7 @@ def adicionar_filmes():
     
     print("Filmes adaicionados com sucesso!")
     print(colecao_filmes)
-    return colecao_filmes
+    #return colecao_filmes
 
 def remover_filmes():
 
@@ -61,5 +59,20 @@ def remover_filmes():
 
     print("Filme(s) removidos com sucesso")
     print(colecao_filmes)
+
+def trocar_filmes():
+
+    while True:
+        filmes_str = input("Você quer retirar qual filme:")
+        if filmes_str.lower() == "s":
+            break
+        colecao_filmes.remove(filmes_str)
+
+        trocar = input("Agora, qual filme você quer acrescentar:")
+        colecao_filmes.append(trocar)
+
+    print("Filme(s) trocados com sucesso")
+    print(colecao_filmes)
+
 
 escolha()
