@@ -25,16 +25,16 @@ def comida_almoco ():
 def comida_jantar ():
     
     lista_jantar = []
-    for a in range(1,4):
+    for j in range(1,4):
         jantar = input(f" Itens {a} da janta: ")
         lista_jantar.append(jantar)
     
     print(f"Lista do jantar: {lista_jantar}")
     return comida_jantar
 
-cafe_da_manha()
-comida_almoco()
-comida_jantar()
+lista_manha = cafe_da_manha()
+lista_almoco = comida_almoco()
+lista_jantar = comida_jantar()
 
 lista_manha.extend(lista_almoco)
 lista_manha.extend(lista_jantar)
