@@ -42,10 +42,11 @@ def concluir_tarefas():
         if lista_de_tarefas == []:
             print("Você deve acrescentar tarefa!")
             break
+
         else:
             tarefa_c = input("Qual tarefa foi concluída?")
             lista_de_tarefas.remove(tarefa_c)
-        
+            
         print("SUA LISTA ATUALIZADA!")
         print(lista_de_tarefas)
         
