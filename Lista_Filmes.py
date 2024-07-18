@@ -47,7 +47,6 @@ def adicionar_filmes():
     
     print("Filmes adaicionados com sucesso!")
     print(colecao_filmes)
-    #return colecao_filmes
 
 def remover_filmes():
 
@@ -73,6 +72,5 @@ def trocar_filmes():
 
     print("Filme(s) trocados com sucesso")
     print(colecao_filmes)
-
 
 escolha()
