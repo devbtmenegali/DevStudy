@@ -18,10 +18,11 @@ def convidados_festa():
 
     elif novo_convidado.lower() == "nao":
         print("A FESTA ESTÁ COMPLETA!")
-    
+        sys.exit()                          #Encerra o programa.                
     else:
         print("Digite um valor válido!")
-
+        #Aqui tem que retornar para a pergunta se deseja incluir!
+    
     return lista_da_festa
 
 def incluir_convidado():
