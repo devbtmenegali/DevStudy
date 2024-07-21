@@ -1,11 +1,13 @@
 def sum_odd_nunmbers():
 
-    number1 = int(input())
-    number2 = int(input())
-
+    X = int(input())
+    Y = int(input())
     odd_numbers = []
 
-    for number in range(number1, number2 + 1):
+    if X > Y:
+        X, Y = Y, X
+
+    for number in range(X, Y):
         if number % 2 == 1:
             odd_numbers.append(number)
 
