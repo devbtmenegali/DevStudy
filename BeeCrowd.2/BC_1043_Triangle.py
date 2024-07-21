@@ -1,10 +1,10 @@
 
+
 A, B, C = map(float, input().split())
 
-if (B + C) > A: 
-    perimetro = A + B + C
-    print(f"Perimetro = {perimetro:.1f}")
-
+if (A + B > C) and (A + C > B) and (B + C > A):
+    perimeter = A + B + C
+    print(f"Perimetro = {perimeter:.1f}")
 else:
-    area = 0.5 * C * (A + B)  
+    area = ((A + B) * C) / 2  
     print(f"Area = {area:.1f}")
