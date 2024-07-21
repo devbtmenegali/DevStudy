@@ -1,22 +1,35 @@
-a = str(input())
-b = str(input())
-c = str(input())
+while True:
+    try:
+        a = input().lower().strip()
+        b = input().lower().strip()
+        c = input().lower().strip()
 
-if a == 'vertebrado' and b == 'ave' and c == 'carnivoro':
-    print(f"aguia") 
-elif a == 'vertebrado' and b == 'ave' and c == 'onivoro':
-    print(f"pomba")
-elif a == 'vertebrado' and b == 'mamifero' and c == 'onivoro':
-    print(f"homem")
-elif a == 'vertebrado' and b == 'mamifero' and c == 'herbivoro':
-    print(f"vaca")
-elif a == 'invertebrado' and b == 'inseto' and c == 'hematofogo':
-    print(f"pulga")
-elif a == 'invertebrado' and b == 'inseto' and c == 'herbivoro':
-    print(f"lagarta")
-elif a == 'invertebrado' and b == 'anelideo' and c == 'hematofogo':
-    print(f"sanguessuga")
-elif a == 'invertebrado' and b == 'anelideo' and c == 'onivoro':
-    print(f"minhoca")
-#else:
-    #print()
+        if a == 'vertebrado':
+            if b == 'ave':
+                if c == 'carnivoro':
+                    print("aguia")
+                elif c == 'onivoro':
+                    print("pomba")
+            elif b == 'mamifero':
+                if c == 'onivoro':
+                    print("homem")
+                elif c == 'herbivoro':
+                    print("vaca")
+        elif a == 'invertebrado':
+            if b == 'inseto':
+                if c == 'hematofago':
+                    print("pulga")
+                elif c == 'herbivoro':
+                    print("lagarta")
+            elif b == 'anelideo':
+                if c == 'hematofago':
+                    print("sanguessuga")
+                elif c == 'onivoro':
+                    print("minhoca")
+        else:
+            raise ValueError("Classificação inválida")
+    
+    except EOFError:
+        break  # Sai do loop quando chegar ao fim do arquivo
+    except ValueError as e:
+        print(e)
