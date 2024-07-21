@@ -5,6 +5,7 @@ media = (N1 * 2 + N2 * 3 + N3 * 4 + N4 * 1) / 10
 if media >= 7.0:
     print("Aluno aprovado.")  
 elif media < 5.0:
+    print(media)
     print("Aluno reprovado.") 
 else:  
     exame = float(input())
