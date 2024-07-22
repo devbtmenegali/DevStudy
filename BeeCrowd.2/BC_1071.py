@@ -1,17 +1,13 @@
-def sum_odd_nunmbers():
+X = int(input())
+Y = int(input())
 
-    X = int(input())
-    Y = int(input())
-    odd_numbers = []
+if X > Y:
+    X, Y = Y, X  
 
-    if X > Y:
-        X, Y = Y, X
+odd_sum = 0
 
-    for number in range(X, Y):
-        if number % 2 == 1:
-            odd_numbers.append(number)
+for num in range(X + 1, Y):  
+    if num % 2 != 0:  
+        odd_sum += num  
 
-    result = sum(odd_numbers)
-    print(result)
-
-sum_odd_nunmbers()
+print(odd_sum)
