@@ -1,10 +1,10 @@
 
 from datetime import datetime
 
-dia_inicio = int(input("Dia "))  
+dia_inicio = int(input().split()[1])
 hora_inicio, minuto_inicio, segundo_inicio = map(int, input().split(":"))
 
-dia_fim = int(input("Dia "))
+dia_fim = int(input().split()[1])
 hora_fim, minuto_fim, segundo_fim = map(int, input().split(":"))
 
 inicio = datetime(datetime.now().year, 4, dia_inicio, hora_inicio, minuto_inicio, segundo_inicio)
