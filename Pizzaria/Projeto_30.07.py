@@ -86,6 +86,40 @@ def apresentar_formas_pagamento():
     for codigo, forma_pagamento in formas_de_pagamento.items():  # Corrigido o nome da variável no loop
         print(f"{codigo} - {forma_pagamento}")
 
+    return formas_de_pagamento
+
+def escolher_pagamento(formas_de_pagamento):
+
+    while True:
+
+        try:
+            pagamento = input("Digite o código conforme a forma de pagamento: ").upper()
+
+            if pagamento in formas_de_pagamento:
+                return formas_de_pagamento[pagamento]
+
+            else:
+                print("Código Inválido")
+
+        except ValueError:
+            print ("Digite um valor válido!")
+
+def pagamento_escolhido(pagamento):
+
+    if pagamento == "P":
+        print("Use o QR-Code para pagar")
+
+    elif pagamento == "D":
+        print("Aproxime o cartão da máquina!")
+
+    elif pagamento == "D":
+        print(f"Deposite o dinheiro na carteira")
+
+    else:
+        print ("A opção escolhida é inválida!")
+
+    print("Muito obrigado pela preferência!")
+
 def main():
     cardapio = exibir_cardapio()
     pizza_escolhida = escolher_pizza(cardapio)  # Obtém o nome da pizza
@@ -97,25 +131,16 @@ def main():
 
     fechar_pedido(pizza_escolhida, preco_pizza, ingredientes_escolhidos, total_preco_ingredientes) 
 
+    formas_de_pagamento = apresentar_formas_pagamento() 
+    forma_pagamento_escolhida = escolher_pagamento(formas_de_pagamento) 
+
+    pagamento_escolhido(forma_pagamento_escolhida)
+
+
 if __name__ == "__main__":
     main()
 
 
 '''
-def escolher_pagamento():
-
-    while True:
-
-        try:
-            pagamento = input("Digite o código conforme a forma de pagamento: ")
-
-            if pagamento in formas_de_pagamento:
-                return formas_de_pagamento[pagamento]
-
-            else:
-                print("Código Inválido")
-
-        except ValueError:
-            print ("Digite um valor válido!")
 
 '''
