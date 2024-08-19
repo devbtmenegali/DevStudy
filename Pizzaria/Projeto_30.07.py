@@ -1,4 +1,3 @@
-
 def exibir_cardapio():
 
     cardapio = {1: "Calabresa",
@@ -41,53 +40,68 @@ def preco_da_pizza(pizza_escolher):
         return 35.00
 
     else:
-        return None
+        return None 
 
 def exibir_ingredientes():
-
     ingredientes = {"A":"Catupiri",
                     "B":"Cheedar", 
                     "C":"+Queijo"}
 
-    for codigo,ingredientes in ingredientes.items():
-        print(f"{codigo} - {ingredientes}")
-    
+    for codigo in ingredientes.keys():  # Itera sobre as chaves (códigos)
+        print(f"{codigo} - {ingredientes[codigo]}")  # Acessa o nome pelo código
+
     return ingredientes
 
 def escolher_ingredientes(ingredientes):
-
-    #ingredientes_totais = exibir_ingredientes()
     ingredientes_escolhidos = []
-    
-    while len(ingredientes_escolhidos) < 3:
-    
-        ingredientes_escolher = input ("Digite o código do ingrediente ou S(sair):").upper()
-                
-        if ingredientes_escolher in ingredientes:
-            ingredientes_escolhidos.append(ingredientes_escolher)
 
-        if ingredientes_escolher == "S":
-            break
-    
+    while len(ingredientes_escolhidos) < 4:
+        ingrediente_escolher = input("Digite o código do ingrediente ou S(sair): ").upper()
+
+        if ingrediente_escolher == "S":
+            break  # Remove a chamada para fechar_pedido() aqui
+
+        if ingrediente_escolher in ingredientes:
+            ingredientes_escolhidos.append(ingrediente_escolher)
+        else:
+            print("Escolha uma opção válida!")
+
     total_preco_ingredientes = len(ingredientes_escolhidos) * 3.00
-    return total_preco_ingredientes
+    return ingredientes_escolhidos, total_preco_ingredientes
 
-def fechar_pedido():
-
-    print(f"Item: {escolher_pizza} - {preco_da_pizza}")
-    print(f"Adicional: {ingredientes_escolhidos} - {total_preco_ingredientes}")
+def fechar_pedido(pizza_escolher, preco_da_pizza, ingredientes, total_preco_ingredientes):
+    
+    print(f"Item: {pizza_escolher} - {preco_da_pizza}")
+    print(f"Adicional: {ingredientes} - {total_preco_ingredientes}")  # Corrigido o nome da variável
     valor_total = preco_da_pizza + total_preco_ingredientes
     print(f"Valor Total a pagar: {valor_total:.2f}")
-    
-def apresentar_formas_pagamento():
 
+    apresentar_formas_pagamento()  # Chama a função para apresentar as formas de pagamento
+
+def apresentar_formas_pagamento():
     formas_de_pagamento = {"P": "Pix",
                            "D": "Cartão",
                            "M": "Dinheiro"}
 
-    for codigo, formas_de_pagamento in formas_de_pagamento.items():
-        print(f"{codigo} - {formas_de_pagamento}")
+    for codigo, forma_pagamento in formas_de_pagamento.items():  # Corrigido o nome da variável no loop
+        print(f"{codigo} - {forma_pagamento}")
 
+def main():
+    cardapio = exibir_cardapio()
+    pizza_escolhida = escolher_pizza(cardapio)  # Obtém o nome da pizza
+    codigo_pizza = list(cardapio.keys())[list(cardapio.values()).index(pizza_escolhida)] # Obtém o código da pizza a partir do nome
+    preco_pizza = preco_da_pizza(codigo_pizza)  # Passa o código da pizza para preco_da_pizza
+
+    ingredientes = exibir_ingredientes()
+    ingredientes_escolhidos, total_preco_ingredientes = escolher_ingredientes(ingredientes)
+
+    fechar_pedido(pizza_escolhida, preco_pizza, ingredientes_escolhidos, total_preco_ingredientes) 
+
+if __name__ == "__main__":
+    main()
+
+
+'''
 def escolher_pagamento():
 
     while True:
@@ -104,24 +118,4 @@ def escolher_pagamento():
         except ValueError:
             print ("Digite um valor válido!")
 
-
-
-def main ():
-
-    cardapio = exibir_cardapio()
-    escolher = escolher_pizza(cardapio)
-    preco_pizza = preco_da_pizza(escolher)
-    
-    ingredientes = exibir_ingredientes()
-    escolher_ingredientes(ingredientes)
-    preco_ingrediente = preco_ingredientes()
-    
-    fechar_pedido(preco_pizza, preco_ingrediente)
-    
-    #apresentar_formas_pagamento()
-    #escolher_pagamento()
-    #finalizacao_pedido()
-
-if __name__== "__main__":
-
-    main()
+'''
