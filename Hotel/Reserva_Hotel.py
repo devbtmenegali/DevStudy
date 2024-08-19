@@ -1,11 +1,4 @@
-def verificar_disponibilidade():
-
-    quartos = {101: "Disponível",
-               102: "Disponível",
-               201: "Disponível",
-               202: "Disponível",
-               301: "Disponível",
-               302: "Disponível"}
+def verificar_disponibilidade(quartos):
 
     while True:
 
@@ -49,6 +42,17 @@ def reservar_quarto(quartos, numero_quarto):
         print("Resposta inválida. Por favor, digite 'S' ou 'N'.")
 
 
-quarto_disponivel = verificar_disponibilidade()
-reservar_quarto(quartos, quarto_disponivel) 
-    
+def main():
+
+    quartos = {101: "Disponível",
+               102: "Disponível",
+               201: "Disponível",
+               202: "Disponível",
+               301: "Disponível",
+               302: "Disponível"}
+
+    quarto_disponivel = verificar_disponibilidade(quartos)
+    reservar_quarto(quartos, quarto_disponivel)
+
+if __name__ == "__main__":
+    main()
