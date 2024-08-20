@@ -48,8 +48,21 @@ def apresentar_adicional():
 
     return adicional
 
+def escolher_adicional(adicional):
 
-#def escolher_adicional():
+    while True:
+
+        try:
+            selecionar_adicional = int(input("Digite o código do adicional:"))
+
+        except ValueError:
+            print ("Digite um valor válido")
+
+        if selecionar_adicional in adicional:
+            return adicional[selecionar_adicional]
+
+
+#def preco_adicional():
 
 #def apresentar_pedido_finalizado():
 
@@ -67,6 +80,7 @@ def main():
     preco_pizza = preco_da_pizza(pizza_escolhida)
 
     apresentar_adicional()
+    adicional_escolhido = escolher_adicional(adicional)
 
 if __name__ == "__main__":
 
